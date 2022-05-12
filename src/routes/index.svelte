@@ -1,6 +1,7 @@
 <script>
 	import Nick from '../lib/Nick.svelte';
 	import Section from '../lib/Section.svelte';
+	import Contentsidebar from '../lib/Contentsidebar.svelte';
 
 	async function getHomepageArticles() {
 		const response = await fetch(
@@ -27,6 +28,7 @@
 {#await homepageArticles}
 	<p>Loading</p>
 {:then articles}
+	<Contentsidebar />
 	{#each articles as { title, url, multimedia, byline }}
 		<!-- <p>{title}<br>{url}</p> -->
 		<Section {url} {title} />
