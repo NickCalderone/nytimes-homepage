@@ -1,0 +1,9 @@
+:root {
+	--color-stroke-primary: #121212;
+	--color-stroke-tertiary: #C7C7C7;
+	--color-stroke-quaternary: #DFDFDF;
+}
+
+body {
+	margin: 0px;
+}

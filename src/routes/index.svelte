@@ -1,6 +1,4 @@
 <script>
-	import Nick from '../lib/Nick.svelte';
-	import Section from '../lib/Section.svelte';
 	import Contentsidebar from '../lib/Contentsidebar.svelte';
 
 	async function getHomepageArticles() {
@@ -20,21 +18,16 @@
 
 	let homepageArticles = getHomepageArticles();
 
-	function handleMessage(e) {
-		alert(e.detail.text);
-	}
 </script>
 
 {#await homepageArticles}
 	<p>Loading</p>
 {:then articles}
-	<Contentsidebar />
+	<Contentsidebar articles={articles} />
 	{#each articles as { title, url, multimedia, byline }}
-		<!-- <p>{title}<br>{url}</p> -->
-		<Section {url} {title} />
+	<p>{title}</p>
 	{/each}
 	<h1>Welcome to SvelteKit</h1>
-	<Nick on:message={handleMessage} />
 	<p>first article is {articles[10].title}</p>
 {:catch error}
 	<p style="color: red">{error.message}</p>
