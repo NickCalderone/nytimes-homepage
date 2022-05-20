@@ -1,11 +1,12 @@
 <script type='ts'>
 	import Contentsection from './Contentsection.svelte';
 	export let articles;
+	export let layout;
 </script>
 
 <div class="content">
 	<div>
-		<Contentsection {articles} />
+		<Contentsection {articles} {layout}/>
 	</div>
 	<div><div>my right section</div></div>
 </div>

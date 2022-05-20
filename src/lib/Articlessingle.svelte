@@ -1,14 +1,14 @@
 <script>
-	export let articles;
+	export let articles = [];
 </script>
 
 <div class="content-article-wrapper">
 	<section>
-		<h3>{articles.title}</h3>
-		<p>{articles.abstract}</p>
+		<h3>{articles[0].title}</h3>
+		<p>{articles[0].abstract}</p>
 	</section>
 	<div>
-		<img src={articles.multimedia[1].url} />
+		<img src={articles[0].multimedia[1].url} />
 	</div>
 </div>
 
